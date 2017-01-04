@@ -5,7 +5,6 @@ setup(
     version='0.0.1',
     packages=['greet'],
     setup_requires=['pytest-runner'],
-    # cmdclass = {'test': PyTest},
     test_suite="tests",
     scripts=["scripts/greetme.py"],
     entry_points={"console_scripts": ["greetme = greetme:main"]},
