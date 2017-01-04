@@ -8,7 +8,9 @@ node {
 
 
         stage("Building artifact"){
-            sh 'make build'
+            sh 'make dist'
+            archiveArtifacts artifacts: 'dist/*.tar.gz', excludes: null
+
         }
     }
     finally {
