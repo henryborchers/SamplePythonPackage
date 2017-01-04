@@ -1,2 +1,2 @@
 # SamplePythonPackage
-Sample Python Package to be used for testing
+Sample Python Package to be used for testing.
