@@ -15,6 +15,9 @@ test:
 build:
 	${PYTHON} setup.py build
 
+dist:
+	${PYTHON} setup.py sdist
+
 clean: cleanpythonbuild cleanreports cleanextrafolders
 
 cleanpythonbuild:
