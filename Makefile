@@ -2,6 +2,8 @@ PYTHON      ?= python
 PIP         ?= pip
 TOX         ?= tox
 
+SUBDIRS = .tox greet.egg-info
+
 all: build test
 
 test:
@@ -13,8 +15,7 @@ build:
 
 clean:
 	${PYTHON} setup.py clean --all
-	rm
-
+	rm -rf $(SUBDIRS)
 
 install: build
 	${PYTHON} setup.py install
