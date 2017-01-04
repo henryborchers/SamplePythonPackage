@@ -13,7 +13,7 @@ node {
     }
     finally {
         stage("Collecting test reports"){
-            junit '*.xml'
+            junit 'reports/*.xml'
         }
 
 

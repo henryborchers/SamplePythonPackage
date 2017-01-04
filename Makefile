@@ -23,7 +23,7 @@ cleanpythonbuild:
 
 cleanreports:
 	@echo "cleaning xml reports"
-	rm -f *.xml
+	rm -rf reports
 
 cleanextrafolders:
 	@echo "cleaning extra folders"
