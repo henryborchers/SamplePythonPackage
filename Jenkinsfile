@@ -1,29 +1,26 @@
 pipeline {
   agent any
   stages {
-    stage("Running Tox tests"){
-      steps{
-        sh """
-        echo "Doing the testing thing."
-
-        make test
-
-        """
+    stage('Running Tox tests') {
+      steps {
+        sh '''echo "Doing the testing thing."
+python3 -m venv .env
+make test'''
       }
     }
-    stage("Building artifact"){
-      steps{
+    stage('Building artifact') {
+      steps {
         sh 'make dist'
-        archiveArtifacts artifacts: 'dist/*.tar.gz', excludes: null
+        archiveArtifacts 'dist/*.tar.gz'
       }
     }
-    stage("Collecting test reports"){
-      steps{
+    stage('Collecting test reports') {
+      steps {
         junit 'reports/*.xml'
       }
     }
     stage('Clean up') {
-      steps{
+      steps {
         sh 'make clean'
       }
     }
