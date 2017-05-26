@@ -21,10 +21,5 @@ make dist'''
         junit 'reports/*.xml'
       }
     }
-    stage('Clean up') {
-      steps {
-        sh 'make clean'
-      }
-    }
   }
 }
