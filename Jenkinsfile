@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''echo "Doing the testing thing."
 python3 -m venv .env
+. .env/bin/activate
 make test'''
       }
     }
