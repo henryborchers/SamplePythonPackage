@@ -3,15 +3,16 @@ pipeline {
   stages {
     stage('Running Tox tests') {
       steps {
-        sh '''echo "Doing the testing thing."
-python3 -m venv .env
+        sh '''python3 -m venv .env
 . .env/bin/activate
 make test'''
       }
     }
     stage('Building artifact') {
       steps {
-        sh 'make dist'
+        sh '''python3 -m venv .env
+. .env/bin/activate
+make dist'''
         archiveArtifacts 'dist/*.tar.gz'
       }
     }
