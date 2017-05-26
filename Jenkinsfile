@@ -3,7 +3,12 @@ pipeline {
   stages {
     stage("Running Tox tests"){
       steps{
-        sh 'make test'
+        sh """
+        echo "Doing the testing thing."
+
+        make test
+
+        """
       }
     }
     stage("Building artifact"){
